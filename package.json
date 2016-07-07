@@ -1,0 +1,25 @@
+{
+  "name": "react-universal-dialog",
+  "version": "0.1.0",
+  "description": "Makes it easy to create dialogs with content that you don't have full knowledge of beforehand.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nevermore/react-universal-dialog.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "modal",
+    "dialog"
+  ],
+  "author": "OÜ Nevermore",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Nevermore/react-universal-dialog/issues"
+  },
+  "homepage": "https://github.com/Nevermore/react-universal-dialog#readme"
+}
