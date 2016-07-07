@@ -1,0 +1,68 @@
+#main {
+	width: 800px;
+	margin: 0px auto;
+}
+
+#dialog1 {
+	position: fixed;
+	background: rgba(255, 255, 255, 0.85);
+	border: 2px solid black;
+	max-height: 90%;
+	overflow: auto;
+}
+
+#content1 {
+
+}
+
+#dialog2 {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 0;
+	margin: 0;
+	z-index: 2147483647;
+	text-align: center;
+	white-space: nowrap;
+}
+
+#dialog2:last-of-type {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#dialog2::before {
+	content: "";
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	margin-right: -.25em;
+}
+
+#dialog2.visible {
+	display: block;
+}
+
+#content2 {
+	position: relative;
+	display: inline-block;
+	text-align: left;
+	background: rgba(255, 255, 255, 0.85);
+	border: 2px solid black;
+	vertical-align: middle;
+	max-height: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	overflow: auto;
+	white-space: normal;
+	padding: 1em;
+	padding-bottom: 0;
+}
+
+#content2::after {
+	content: "";
+	height: 1em;
+	display: block;
+}
