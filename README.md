@@ -10,8 +10,8 @@ Makes it easy to create dialogs with content that you don't have full knowledge 
 
 Supports a wide range of browsers:
 
-Chrome - latest stable
-Firefox - latest stable
-Edge - latest stable
-iOS Safari - latest stable
-IE - 9/10/11
+- Chrome - latest stable
+- Firefox - latest stable
+- Edge - latest stable
+- iOS Safari - latest stable
+- IE - 9/10/11
