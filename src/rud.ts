@@ -130,10 +130,17 @@ export class Dialog {
 	}
 
 	open(modal = true) {
+		// Nothing to do when the dialog is already open
+		if (this.isOpen != 0) return;
+
 		// TODO: Implement non-modal
 		if (this.elContainer != undefined) {
 			this.elContainer.style.display = "block";
 			this.isOpen = 1;
+		}
+
+		// If we actually managed to open the dialog
+		if (this.isOpen != 0) {
 			if (this.options.onOpen != undefined) {
 				this.options.onOpen(this);
 			}
@@ -141,13 +148,18 @@ export class Dialog {
 	}
 
 	close() {
-		this.isOpen = 0;
+		// Nothing to do when the dialog is already closed
+		if (this.isOpen == 0) return;
+
 		if (this.elContainer != undefined) {
 			this.elContainer.style.display = "none";
-			if (this.options.onClose != undefined) {
-				this.options.onClose(this);
-			}
 		}
+
+		this.isOpen = 0;
+		if (this.options.onClose != undefined) {
+			this.options.onClose(this);
+		}
+
 		if (this.options.destroyOnClose) {
 			this.destroy();
 		}
