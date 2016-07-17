@@ -19,11 +19,17 @@ import * as ReactDOM from "react-dom";
 import { Store } from "redux";
 import { Provider } from "react-redux";
 
+export interface DialogEventHandler {
+	(instance: Dialog): any;
+}
+
 export interface DialogOptions {
-	[key: string]: Store<any> | boolean;
+	[key: string]: Store<any> | boolean | DialogEventHandler;
 	store?: Store<any>;
 	destroyOnClose?: boolean;
 	showClose?: boolean;
+	onOpen?: DialogEventHandler;
+	onClose?: DialogEventHandler;
 }
 
 export class Dialog {
@@ -36,7 +42,13 @@ export class Dialog {
 	private elDialogClose: HTMLDivElement;
 	private elDialogContent: HTMLDivElement;
 
-	static defaults: DialogOptions = {store: undefined, destroyOnClose: true, showClose: true};
+	static defaults: DialogOptions = {
+		store: undefined,
+		destroyOnClose: true,
+		showClose: true,
+		onOpen: undefined,
+		onClose: undefined
+	};
 
 	private static optionsWithDefaults(options: DialogOptions = {}) {
 		let result: DialogOptions = {};
@@ -122,13 +134,19 @@ export class Dialog {
 		if (this.elContainer != undefined) {
 			this.elContainer.style.display = "block";
 			this.isOpen = 1;
+			if (this.options.onOpen != undefined) {
+				this.options.onOpen(this);
+			}
 		}
 	}
 
 	close() {
 		this.isOpen = 0;
 		if (this.elContainer != undefined) {
-			this.elContainer.style.display = "none";			
+			this.elContainer.style.display = "none";
+			if (this.options.onClose != undefined) {
+				this.options.onClose(this);
+			}
 		}
 		if (this.options.destroyOnClose) {
 			this.destroy();

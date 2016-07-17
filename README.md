@@ -30,11 +30,11 @@ dialog.open();
 ### let d = new Dialog(reactElement, options)
 
 - **reactElement** - Anything that can be passed to ReactDOM.render(). Can be a simple JSX `<p>Hello</p>`, can be your custom React component `<MyComponent />`, can be the result of `React.createElement()`.
-- **options** - Object (see defaults below) - **store**: Redux store, **destroyOnClose**: destroys dialog upon first close, **showClose**: show a MDL close button
+- **options** - Object (see defaults below) - **store**: Redux store, **destroyOnClose**: destroys dialog upon first close, **showClose**: show a MDL close button, **onOpen**: event handler for open, **onClose**: event handler for close
 
 **Note:** When the `store` option is set to a Redux store, then whatever you pass as `reactElement` will get surrounded with react-redux's `<Provider store={store} />` component.
 
-### Dialog.defaults = {store: undefined, destroyOnClose: true, showClose: true}
+### Dialog.defaults = {store: undefined, destroyOnClose: true, showClose: true, onOpen: undefined, onClose: undefined}
 
 The default options object. Feel free to modify its properties to change the default behavior. This can be especially convenient with Redux, as you can specifcy `store` only once and no need to have a reference to it when actually creating dialogs.
 
