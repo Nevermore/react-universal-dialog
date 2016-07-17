@@ -1,6 +1,6 @@
 {
   "name": "react-universal-dialog",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Makes it easy to create dialogs with content that you don't have full knowledge of beforehand.",
   "main": "bin/rud.js",
   "typings": "bin/rud.d.ts",
