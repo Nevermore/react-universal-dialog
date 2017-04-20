@@ -1,9 +1,9 @@
 {
   "name": "react-universal-dialog",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Makes it easy to create dialogs with content that you don't have full knowledge of beforehand.",
   "main": "bin/rud.js",
-  "typings": "bin/rud.d.ts",
+  "types": "bin/rud.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,11 +23,11 @@
     "url": "https://github.com/Nevermore/react-universal-dialog/issues"
   },
   "homepage": "https://github.com/Nevermore/react-universal-dialog#readme",
-  "devDependencies": {
-    "@types/material-design-lite": "^1.1.12-alpha",
-    "@types/react": "^0.14.26-alpha",
-    "@types/react-dom": "^0.14.12-alpha",
-    "@types/react-redux": "^4.4.26-alpha",
-    "@types/redux": "^3.3.25-alpha"
+  "dependencies": {
+    "@types/material-design-lite": "^1.1.14",
+    "@types/react": "^15.0.22",
+    "@types/react-dom": "^15.5.0",
+    "@types/react-redux": "^4.4.39",
+    "redux": "^3.6.0"
   }
 }
