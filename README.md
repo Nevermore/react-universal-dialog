@@ -32,6 +32,8 @@ dialog.open();
 - **reactElement** - Anything that can be passed to ReactDOM.render(). Can be a simple JSX `<p>Hello</p>`, can be your custom React component `<MyComponent />`, can be the result of `React.createElement()`.
 - **options** - Object (see defaults below) - **store**: Redux store, **destroyOnClose**: destroys dialog upon first close, **showClose**: show a MDL close button, **onOpen**: event handler for open, **onClose**: event handler for close
 
+**Note:** The provided **reactElement** will be cloned with `React.cloneElement()` and a new `_dialog` property will be set to the same pointer that gets returned by `new Dialog()`. This allows you to easily operate on the dialog from inside the React class, e.g. to close the dialog due to some event.
+
 **Note:** When the `store` option is set to a Redux store, then whatever you pass as `reactElement` will get surrounded with react-redux's `<Provider store={store} />` component.
 
 ### Dialog.defaults = {store: undefined, destroyOnClose: true, showClose: true, onOpen: undefined, onClose: undefined}

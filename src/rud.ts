@@ -96,6 +96,9 @@ export class Dialog {
 		this.onKeyDown = this.onKeyDown.bind(this);
 		document.addEventListener("keydown", this.onKeyDown);
 		document.body.appendChild(this.elContainer);
+
+		// Provide a pointer to this dialog for usage inside the react element (close buttons etc)
+		reactElement = React.cloneElement(reactElement, { _dialog: this });
 		
 		// Create & mount the react component to the dialog's content element
 		if (this.options.store == undefined) {
