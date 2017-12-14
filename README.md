@@ -74,6 +74,6 @@ Close the dialog.
 
 # About
 
-© Copyright 2016 [OÜ Nevermore](https://www.nevermore.ee)
+© Copyright 2016 [OÜ Nevermore](https://nevermore.ee)
 
 Licensed under the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0)
