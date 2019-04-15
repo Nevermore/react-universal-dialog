@@ -5,7 +5,13 @@
 		"declaration": true,
 		"target": "ES5",
 		"module": "CommonJS",
-		"outDir": "bin"
+		"outDir": "bin",
+		"lib": [
+			"DOM",
+			"ES5",
+			"ScriptHost",
+			"ES2015.Iterable",
+		]
 	},
 	"exclude": [
 		"node_modules",
